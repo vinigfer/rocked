@@ -5,16 +5,20 @@ A thin wrapper to manage [Docker][docker] containers. It just generates command 
 
 ## Dependencies
 
-Its only dependencies are [docopt][docopt] and [PyYAML][pyyaml], which can be installed either in a virtualenv or in a system-wide installation using [pip][pip]:
+Its only dependencies are [docopt][docopt] and [PyYAML][pyyaml]. We recommend installing system-wide with apt-get, as the installation with [pip][pip] is not correctlly installing dependencies.
 
-`pip install -r requirements.txt`
 
 ## Installation
 
 As Rocked is not available on [PyPI][pypi] yet, you have to clone this repository and add its executable to anywhere on your `$PATH`, e.g.:
 
-    sudo git clone https://github.com/myhro/rocked.git /usr/local/lib/rocked
-    sudo ln -s /usr/local/lib/rocked/rocked.py /usr/local/bin/rocked
+```
+sudo apt-get install libyaml-dev libpython2.7-dev python-pip
+sudo pip install -U pyyaml
+sudo git clone https://github.com/myhro/rocked.git /usr/local/lib/rocked
+sudo ln -s /usr/local/lib/rocked/rocked.py /usr/local/bin/rocked
+pip install -r requirements.txt
+```
 
 Then you can just use the `rocked` command:
 
